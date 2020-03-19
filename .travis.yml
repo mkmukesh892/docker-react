@@ -4,7 +4,7 @@ services:
 before_insall:
   - docker build -t docker892/docker-react  -f Dockerfile.dev .
 script:
-    - docker run -e CI=true docker892/docker-react npm run test
+    - docker run -e CI=true docker892/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
